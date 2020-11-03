@@ -4,16 +4,22 @@ class GildedRose
   end
 
   def update_quality()
-    @items.each do |item|
-      if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
+		@items.each do |item|
+			# item name is not brie nor is it a backstage pass to , nor is it Sulfuras, 
+			# the qiality is decreased by -1 as long as its quality is more than zero
+			if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
             item.quality = item.quality - 1
           end
         end
-      else
+			else
+				#if it is the Brie, backstage pass pr Sulurass, and the quality is less than < 50
+				# item quality increases by +1
         if item.quality < 50
-          item.quality = item.quality + 1
+					item.quality = item.quality + 1
+					#if item is a backstage pass for a concert that is in less than 11 days, 
+					#and the quality is less than 50, increase the quality by 1
           if item.name == "Backstage passes to a TAFKAL80ETC concert"
             if item.sell_in < 11
               if item.quality < 50
