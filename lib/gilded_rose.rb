@@ -50,6 +50,13 @@ class GildedRose
 			item.sell_in -= 1 
 		end 
 	end
+
+	def increase_quality
+		@items.each do |item|
+		item.quality += 1
+		end
+	end
+		
 end
 
 class Item
