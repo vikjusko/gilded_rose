@@ -7,6 +7,7 @@ describe GildedRose do
       GildedRose.new(items).update_quality()
       expect(items[0].name).to eq "foo"
 		end
+	end 
 		
 		context "Old brie quality update case" do
 		it "increases  the quality of Brie the older it gets" do
@@ -42,11 +43,11 @@ describe GildedRose do
 			end
 
 			it "increases the backstage pass only by 1  when sell by date is less than 6 because it goes over the quality of 50" do
-			items = [ Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 5, quality = 49)]
-			GildedRose.new(items).update_quality
-			expect(items[0].sell_in).to eq 4
-			expect(items[0].quality).to eq 50
-		end
+				items = [ Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 5, quality = 49)]
+				GildedRose.new(items).update_quality
+				expect(items[0].sell_in).to eq 4
+				expect(items[0].quality).to eq 50
+			end
 
 			it "increases the backstage pass only by 2 because it is less than 10 days away from the concert" do
 				items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 10, quality = 40)]
@@ -70,7 +71,46 @@ describe GildedRose do
 				expect(items[0].sell_in).to eq -1
 				expect(items[0].quality).to eq 0
 			end
-
 		end 
-  end
+		
+		context "Ordinary product quality update case" do
+			it "decreases the quality of the product" do
+				items = [Item.new(name = "Elixir of the Mongoose", sell_in = 5, quality = 7)]
+				GildedRose.new(items).update_quality
+				expect(items[0].sell_in).to eq 4
+				expect(items[0].quality).to eq 6
+			end 
+
+			it "decreases the quality by two since the sell by date passed" do
+				items = [Item.new(name = "Elixir of the Mongoose", sell_in = 0, quality = 7)]
+				GildedRose.new(items).update_quality
+				expect(items[0].sell_in).to eq -1
+				expect(items[0].quality).to eq 5
+			end
+		end
+
+		context "Sulfuras, Hand of Ragnaros update quality case" do
+			it "keeps the quality and the sell_in date fixed" do
+				items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = 0, quality = 80)]
+				GildedRose.new(items).update_quality
+				expect(items[0].sell_in).to eq 0
+				expect(items[0].quality).to eq 80
+			end
+
+			it "keeps the quality and sell_by date the same even though the sell by date has passed" do
+				items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
+				GildedRose.new(items).update_quality
+				expect(items[0].sell_in).to eq -1
+				expect(items[0].quality).to eq 80
+			end
+		end
 end
+
+
+describe Item do 
+	let(:item)  { described_class.new(name = '+5 Dexterity Vest', sell_in = 10, quality = 20) }
+
+	it "is initialized with a name" do 
+		expect(item.name).to eq "+5 Dexterity Vest"
+	end 
+end 
