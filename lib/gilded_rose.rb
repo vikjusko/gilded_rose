@@ -16,10 +16,8 @@ class GildedRose
 			else
 				#if it is the Brie, backstage pass pr Sulurass, and the quality is less than < 50
 				# item quality increases by +1
-        if item.quality < 50
-					item.quality += 1
-					#if item is a backstage pass for a concert that is in less than 11 days, 
-					#and the quality is less than 50, increase the quality by 1
+        if item.quality < 50 
+					item.quality +=  1
           if item.name == "Backstage passes to a TAFKAL80ETC concert"
             if item.sell_in < 11
               if item.quality < 50
