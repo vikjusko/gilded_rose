@@ -113,4 +113,12 @@ describe Item do
 	it "is initialized with a name" do 
 		expect(item.name).to eq "+5 Dexterity Vest"
 	end 
+
+	it "is initialized with a sell_in date" do
+		expect(item.sell_in).to eq 10
+	end
+
+	it "is initalize with a quality" do
+		expect(item.quality).to eq 20
+	end 
 end 
