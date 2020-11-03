@@ -121,4 +121,8 @@ describe Item do
 	it "is initalize with a quality" do
 		expect(item.quality).to eq 20
 	end 
+
+	it "Can return item information as a sentence" do 
+		expect(item.to_s).to eq "+5 Dexterity Vest, 10, 20"
+	end
 end 
