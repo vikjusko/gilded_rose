@@ -45,18 +45,17 @@ class GildedRose
     end
   end
 
-	def update_age
-		@items.each  do |item|
-			item.sell_in -= 1 
-		end 
-	end
+  def update_age
+    @items.each do |item|
+      item.sell_in -= 1
+    end
+  end
 
-	def increase_quality
-		@items.each do |item|
-		item.quality += 1
-		end
-	end
-		
+  def increase_quality
+    @items.each do |item|
+      item.quality += 1
+    end
+  end
 end
 
 class Item
