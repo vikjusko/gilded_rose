@@ -55,7 +55,13 @@ class GildedRose
     @items.each do |item|
       item.quality += 1
     end
-  end
+	end
+	
+	def decrease_quality
+  	@items.each do |item|
+    item.quality -= 1
+  	end
+	end
 end
 
 class Item
