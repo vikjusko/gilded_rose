@@ -28,7 +28,7 @@ class GildedRose
           end
         end
       end
-      item.sell_in -= 1 if item.name != 'Sulfuras, Hand of Ragnaros'
+      update_age if item.name != 'Sulfuras, Hand of Ragnaros'
       if item.sell_in.negative?
         if item.name != 'Aged Brie'
           if item.name != 'Backstage passes to a TAFKAL80ETC concert'
@@ -44,6 +44,12 @@ class GildedRose
       end
     end
   end
+
+	def update_age
+		@items.each  do |item|
+			item.sell_in -= 1 
+		end 
+	end
 end
 
 class Item

@@ -7,7 +7,7 @@ describe GildedRose do
       GildedRose.new(items).update_quality()
       expect(items[0].name).to eq "foo"
 		end
-	end 
+	
 		
 		context "Old brie quality update case" do
 		it "increases  the quality of Brie the older it gets" do
@@ -104,6 +104,13 @@ describe GildedRose do
 				expect(items[0].quality).to eq 80
 			end
 		end
+
+		it "can update the age correctly" do
+			items = [Item.new(name = "Sulfuras, Hand of Ragnaros", sell_in = -1, quality = 80)]
+			GildedRose.new(items).update_age
+			expect(items[0].sell_in).to eq -2
+		end 
+	end
 end
 
 
