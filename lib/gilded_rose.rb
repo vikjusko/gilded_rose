@@ -33,10 +33,10 @@ class GildedRose
         if item.name != 'Aged Brie'
           if item.name != 'Backstage passes to a TAFKAL80ETC concert'
             if item.quality.positive?
-              item.quality -= 1 if item.name != 'Sulfuras, Hand of Ragnaros'
+              decrease_quality if item.name != 'Sulfuras, Hand of Ragnaros'
             end
           else
-            item.quality -= item.quality
+            erase_quality
           end
         else
           increase_quality if item.quality < 50
@@ -55,13 +55,19 @@ class GildedRose
     @items.each do |item|
       item.quality += 1
     end
-	end
-	
-	def decrease_quality
-  	@items.each do |item|
-    item.quality -= 1
-  	end
-	end
+  end
+
+  def decrease_quality
+    @items.each do |item|
+      item.quality -= 1
+    end
+  end
+
+  def erase_quality
+    @items.each do |item|
+      item.quality -= item.quality
+    end
+  end
 end
 
 class Item

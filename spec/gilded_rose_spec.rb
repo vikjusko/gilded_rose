@@ -123,11 +123,19 @@ describe GildedRose do
     end
   end
 
-  describe 'decrease quality method' do
+  describe '#decrease quality method' do
     it 'decreases the quality by one' do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).decrease_quality
       expect(items[0].quality).to eq 6
+    end
+  end
+
+  describe '#erase quality' do
+    it 'decreases the quality by one' do
+      items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
+      GildedRose.new(items).erase_quality
+      expect(items[0].quality).to eq 0
     end
   end
 end
