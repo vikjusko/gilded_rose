@@ -16,17 +16,16 @@ class GildedRose
       else
         # if it is the Brie, backstage pass pr Sulurass, and the quality is less than < 50
         # item quality increases by +1
-        if item.quality < 50
           increase_quality
           if item.name == 'Backstage passes to a TAFKAL80ETC concert'
             if item.sell_in < 11
-              increase_quality if item.quality < 50
+              increase_quality 
             end
             if item.sell_in < 6
-              increase_quality if item.quality < 50
+              increase_quality 
             end
           end
-        end
+        
       end
       update_age if item.name != 'Sulfuras, Hand of Ragnaros'
       if item.sell_in.negative?
@@ -39,7 +38,7 @@ class GildedRose
             erase_quality
           end
         else
-          increase_quality if item.quality < 50
+          increase_quality 
         end
       end
     end
@@ -51,15 +50,17 @@ class GildedRose
     end
   end
 
-  def increase_quality
+	def increase_quality
+		#the quality will only be increasing if the quality is under 50
     @items.each do |item|
-      item.quality += 1
+      item.quality += 1 if item.quality < 50
     end
   end
 
-  def decrease_quality
+	def decrease_quality
+		#the quality will only be decreasing if the quality is positive
     @items.each do |item|
-      item.quality -= 1
+      item.quality -= 1 
     end
   end
 
@@ -81,5 +82,6 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-  end
+	end
+	
 end
