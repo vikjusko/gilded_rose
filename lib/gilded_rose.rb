@@ -7,11 +7,10 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      case item.name
-      when 'Aged Brie'
+      if item.name == 'Aged Brie'
         increase_quality
         increase_quality if item.sell_in.negative?
-      when 'Backstage passes to a TAFKAL80ETC concert'
+			elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
         increase_quality
         increase_quality if item.sell_in < 11
         increase_quality if item.sell_in < 6
@@ -19,16 +18,15 @@ class GildedRose
         decrease_quality
       end
       update_age
-      next unless item.sell_in.negative?
-
-      case item.name
-      when 'Aged Brie'
-        increase_quality
-      when 'Backstage passes to a TAFKAL80ETC concert'
-        erase_quality
-      else
-        decrease_quality
-      end
+      if item.sell_in.negative?
+      	if item.name == 'Aged Brie'
+        	increase_quality
+				elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
+        	erase_quality
+     	 else
+        	decrease_quality
+				end
+			end
     end
   end
 
@@ -68,13 +66,5 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-  end
-
-  def ordinary?
-    @name != 'Sulfuras, Hand of Ragnaros' && @name != 'Backstage passes to a TAFKAL80ETC concert' && @name != 'Aged Brie'
-  end
-
-  def brie?
-    @name == 'Aged Brie'
   end
 end

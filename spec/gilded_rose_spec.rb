@@ -169,13 +169,6 @@ describe GildedRose do
       GildedRose.new(items).erase_quality
       expect(items[0].quality).to eq 0
     end
-
-		## erase method has been changed and this test is no longer valid
-    # it 'does not delete the quality of Elixir as its not a backstage pass ' do
-    #   items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
-    #   GildedRose.new(items).erase_quality
-    #   expect(items[0].quality).to eq 7
-    # end
   end
 end
 
@@ -196,15 +189,5 @@ describe Item do
 
   it 'Can return item information as a sentence' do
     expect(item.to_s).to eq '+5 Dexterity Vest, 10, 20'
-  end
-
-  it 'can detect if the item is ordinary' do
-    brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
-    expect(brie.ordinary?).to eq false
-  end
-
-  it 'can detect if item is brie' do
-    brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
-    expect(brie.brie?).to eq true
   end
 end
