@@ -109,9 +109,16 @@ describe GildedRose do
 
   describe '#update age method' do
     it 'can update the age correctly' do
-      items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
+      # it does not update the age of Sulfuras, Hand of Ragnaros"
+      items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = - 1, quality = 80)]
       GildedRose.new(items).update_age
-      expect(items[0].sell_in).to eq(-2)
+      expect(items[0].sell_in).to eq(-1)
+    end
+
+    it 'Update the age of product as long as the name is not Sulfuras' do
+      items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
+      GildedRose.new(items).update_age
+      expect(items[0].sell_in).to eq 4
     end
   end
 
@@ -142,7 +149,7 @@ end
 
 describe Item do
   let(:item) { described_class.new(name = '+5 Dexterity Vest', sell_in = 10, quality = 20) }
-	# State testing that is not necessary anymore
+  # State testing that is not necessary anymore
   # it 'is initialized with a name' do
   #   expect(item.name).to eq '+5 Dexterity Vest'
   # end
