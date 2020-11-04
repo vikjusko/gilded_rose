@@ -6,4 +6,10 @@
 - Update age method - always decreases age by one, unless the product is 'Sulfuras, Hand of Ragnaros'
 - Increase the quality of the product as long as the quality is less than < 50, however if the name is 'Sulfuras, Hand of Ragnaros' - quality can go up higher
 - Decrease the quality - quality goes down by one as long as the quality is not negative, however if the product is 'Sulfuras, Hand of Ragnaros' the quality does not go down
-- Reversing the if statement to start with positives- if name == Brie and name == Backstage passes, then the quality increases
+4. Refactoring the main code:
+-Reversing the if statement to start with positives- if name == Brie and name == Backstage passes, then the quality increases
+- the age will always decrease, unless the name is Sulfuras, hand of Ranaros
+- Brie will always only increase in its quality- no matter what
+- Can now potentially create a method update - that calls two methods inside it : - updating age and updating quality
+
+ 
