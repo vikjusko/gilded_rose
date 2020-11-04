@@ -52,10 +52,12 @@ class GildedRose
   end
 
   def erase_quality
-    @items.each do |item|
-      item.quality -= item.quality
+		@items.each do |item|
+			if item.name == 'Backstage passes to a TAFKAL80ETC concert' && item.sell_in.negative?
+				item.quality -= item.quality 
+			end
     end
-  end
+	end
 end
 
 class Item
