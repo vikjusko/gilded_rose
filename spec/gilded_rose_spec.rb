@@ -127,27 +127,26 @@ describe GildedRose do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).increase_quality
       expect(items[0].quality).to eq 7
-		end
-		
-		it "does increase the quality of Brie" do 
-			items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
-			GildedRose.new(items).increase_quality
-			expect(items[0].quality).to eq 50
-		end 
+    end
 
-		it "Does not increase the quality of brie if the quality is over 50" do
-			items = [Item.new(name = "Aged Brie", sell_in = 0, quality = 50)]
-			GildedRose.new(items).increase_quality
-			expect(items[0].quality).to eq 50
-		end 
+    it 'does increase the quality of Brie' do
+      items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
+      GildedRose.new(items).increase_quality
+      expect(items[0].quality).to eq 50
+    end
 
-		it "does increase the quality of Backstage passes" do
-			items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 12, quality = 40)]
-			GildedRose.new(items).increase_quality
-			expect(items[0].quality).to eq 41
-		end 
-	end
+    it 'Does not increase the quality of brie if the quality is over 50' do
+      items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 50)]
+      GildedRose.new(items).increase_quality
+      expect(items[0].quality).to eq 50
+    end
 
+    it 'does increase the quality of Backstage passes' do
+      items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 12, quality = 40)]
+      GildedRose.new(items).increase_quality
+      expect(items[0].quality).to eq 41
+    end
+  end
 
   describe '#decrease quality method' do
     it 'decreases the quality by one' do
@@ -160,26 +159,22 @@ describe GildedRose do
       items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
       GildedRose.new(items).decrease_quality
       expect(items[0].quality).to eq(80)
-		end
-	
+    end
   end
 
-	describe '#erase quality' do
-		
-		it "erases the quality for the backstage passes that are past their due date" do 
-			items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = -1, quality = 40)]
-			GildedRose.new(items).erase_quality
-			expect(items[0].quality).to eq 0
-		end 
+  describe '#erase quality' do
+    it 'erases the quality for the backstage passes that are past their due date' do
+      items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = -1, quality = 40)]
+      GildedRose.new(items).erase_quality
+      expect(items[0].quality).to eq 0
+    end
 
     it 'does not delete the quality of Elixir as its not a backstage pass ' do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).erase_quality
       expect(items[0].quality).to eq 7
     end
-	end
-	
-	
+  end
 end
 
 describe Item do
@@ -199,15 +194,15 @@ describe Item do
 
   it 'Can return item information as a sentence' do
     expect(item.to_s).to eq '+5 Dexterity Vest, 10, 20'
-	end
-	
-	it "can detect if the item is ordinary" do
-	 brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
-	 expect(brie.ordinary?).to eq false
-	end 
+  end
 
-	it "can detect if item is brie" do
-		brie = Item.new(name = "Aged Brie", sell_in = 2, quality = 0)
-		expect(brie.brie?).to eq true
-	end 
+  it 'can detect if the item is ordinary' do
+    brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
+    expect(brie.ordinary?).to eq false
+  end
+
+  it 'can detect if item is brie' do
+    brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
+    expect(brie.brie?).to eq true
+  end
 end

@@ -7,26 +7,27 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      if item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert'
+      case item.name
+      when 'Aged Brie'
         increase_quality
-        if item.name == 'Backstage passes to a TAFKAL80ETC concert'
-          increase_quality if item.sell_in < 11
-          increase_quality if item.sell_in < 6
-        end
+        increase_quality if item.sell_in.negative?
+      when 'Backstage passes to a TAFKAL80ETC concert'
+        increase_quality
+        increase_quality if item.sell_in < 11
+        increase_quality if item.sell_in < 6
       else
         decrease_quality
       end
       update_age
-      if item.sell_in.negative?
-        if item.name == 'Aged Brie'
-          increase_quality
-        else
-          if item.name != 'Backstage passes to a TAFKAL80ETC concert'
-            decrease_quality
-          else
-            erase_quality
-          end
-        end
+      next unless item.sell_in.negative?
+
+      case item.name
+      when 'Aged Brie'
+        increase_quality
+      when 'Backstage passes to a TAFKAL80ETC concert'
+        erase_quality
+      else
+        decrease_quality
       end
     end
   end
@@ -39,9 +40,7 @@ class GildedRose
 
   def increase_quality
     @items.each do |item|
-      if item.name == 'Aged Brie' || (item.name == 'Backstage passes to a TAFKAL80ETC concert' && item.sell_in.positive?)
-        item.quality += 1 if item.quality < 50
-      end
+      item.quality += 1 if item.quality < 50
     end
   end
 
@@ -52,12 +51,10 @@ class GildedRose
   end
 
   def erase_quality
-		@items.each do |item|
-			if item.name == 'Backstage passes to a TAFKAL80ETC concert' && item.sell_in.negative?
-				item.quality -= item.quality 
-			end
+    @items.each do |item|
+      item.quality -= item.quality
     end
-	end
+  end
 end
 
 class Item
@@ -71,14 +68,13 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-	end
-	
-	def ordinary?
-		@name != 'Sulfuras, Hand of Ragnaros' && @name != 'Backstage passes to a TAFKAL80ETC concert' && @name != "Aged Brie"
-	end
+  end
 
-	def brie?
-		@name == 'Aged Brie'
-	end 
-	
+  def ordinary?
+    @name != 'Sulfuras, Hand of Ragnaros' && @name != 'Backstage passes to a TAFKAL80ETC concert' && @name != 'Aged Brie'
+  end
+
+  def brie?
+    @name == 'Aged Brie'
+  end
 end
