@@ -122,12 +122,13 @@ describe GildedRose do
     end
   end
 
-  describe 'increase quality method' do
-    it 'does not increase the quality if the product is not Brie or Backstage passes' do
-      items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
-      GildedRose.new(items).increase_quality
-      expect(items[0].quality).to eq 7
-    end
+	describe 'increase quality method' do
+		## this test is no longer working as the method of increase has been changed
+    # it 'does not increase the quality if the product is not Brie or Backstage passes' do
+    #   items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
+    #   GildedRose.new(items).increase_quality
+    #   expect(items[0].quality).to eq 7
+    # end
 
     it 'does increase the quality of Brie' do
       items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
@@ -135,7 +136,7 @@ describe GildedRose do
       expect(items[0].quality).to eq 50
     end
 
-    it 'Does not increase the quality of brie if the quality is over 50' do
+    it 'Does not increase the quality of a product if the quality is over 50' do
       items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 50)]
       GildedRose.new(items).increase_quality
       expect(items[0].quality).to eq 50
@@ -169,11 +170,12 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
-    it 'does not delete the quality of Elixir as its not a backstage pass ' do
-      items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
-      GildedRose.new(items).erase_quality
-      expect(items[0].quality).to eq 7
-    end
+		## erase method has been changed and this test is no longer valid
+    # it 'does not delete the quality of Elixir as its not a backstage pass ' do
+    #   items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
+    #   GildedRose.new(items).erase_quality
+    #   expect(items[0].quality).to eq 7
+    # end
   end
 end
 
