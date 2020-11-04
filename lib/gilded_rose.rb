@@ -39,7 +39,9 @@ class GildedRose
 
   def increase_quality
     @items.each do |item|
-      item.quality += 1 if item.quality < 50
+      if item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert'
+        item.quality += 1 if item.quality < 50
+      end
     end
   end
 
