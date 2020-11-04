@@ -132,7 +132,7 @@ end
 			items = [Item.new(name = "Aged Brie", sell_in = -10, quality = 7)]
 			GildedRose.new(items).update_quality
 			expect(items[0].sell_in).to eq -11
-			expect(items[0].quality).to eq 10
+			expect(items[0].quality).to eq 9
 		end
   end
 

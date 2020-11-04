@@ -9,7 +9,7 @@ class GildedRose
     @items.each do |item|
       if item.name == 'Aged Brie'
         increase_quality
-        increase_quality if item.sell_in.negative?
+        # increase_quality if item.sell_in.negative? - this actually adds 3 to quality when its negative- was incorrect!
 			elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
         increase_quality
         increase_quality if item.sell_in < 11
