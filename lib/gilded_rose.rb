@@ -10,9 +10,7 @@ class GildedRose
       # item name is not brie nor is it a backstage pass to , nor is it Sulfuras,
       # the qiality is decreased by -1 as long as its quality is more than zero
       if (item.name != 'Aged Brie') && (item.name != 'Backstage passes to a TAFKAL80ETC concert')
-        if item.quality.positive?
-          item.quality -= 1 if item.name != 'Sulfuras, Hand of Ragnaros'
-        end
+          decrease_quality
       else
         # if it is the Brie, backstage pass pr Sulurass, and the quality is less than < 50
         # item quality increases by +1
@@ -56,7 +54,7 @@ class GildedRose
   def decrease_quality
     # the quality will only be decreasing if the quality is positive
     @items.each do |item|
-      item.quality -= 1 if item.quality < 50 && item.name != 'Sulfuras, Hand of Ragnaros'
+      item.quality -= 1 if item.quality.positive? && item.name != 'Sulfuras, Hand of Ragnaros'
     end
   end
 
