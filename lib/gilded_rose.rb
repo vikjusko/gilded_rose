@@ -7,26 +7,22 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      if item.name == 'Aged Brie'
-        increase_quality
-        # increase_quality if item.sell_in.negative? - this actually adds 3 to quality when its negative- was incorrect!
-			elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
-        increase_quality
+      case item.name
+      when 'Aged Brie'
+				increase_quality
+				update_age
+				increase_quality if item.sell_in.negative?
+      when 'Backstage passes to a TAFKAL80ETC concert'
+				increase_quality
         increase_quality if item.sell_in < 11
-        increase_quality if item.sell_in < 6
+				increase_quality if item.sell_in < 6 
+				update_age
+				erase_quality if item.sell_in.negative?	
       else
-        decrease_quality
+				decrease_quality
+				update_age
+				decrease_quality if item.sell_in.negative?
       end
-      update_age
-      if item.sell_in.negative?
-      	if item.name == 'Aged Brie'
-        	increase_quality
-				elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
-        	erase_quality
-     	 else
-        	decrease_quality
-				end
-			end
     end
   end
 
@@ -38,13 +34,13 @@ class GildedRose
 
   def increase_quality
     @items.each do |item|
-      item.quality += 1 if item.quality < 50
+			item.quality += 1 if item.quality < 50
     end
   end
 
   def decrease_quality
     @items.each do |item|
-      item.quality -= 1 if item.quality.positive? && item.name != 'Sulfuras, Hand of Ragnaros'
+      item.quality -= 1 if item.name != 'Sulfuras, Hand of Ragnaros' && item.quality.positive?
     end
   end
 
@@ -66,5 +62,5 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-  end
+	end
 end

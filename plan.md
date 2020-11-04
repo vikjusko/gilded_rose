@@ -12,4 +12,5 @@
 - Brie will always only increase in its quality- no matter what
 - Can now potentially create a method update - that calls two methods inside it : - updating age and updating quality
 
+
  

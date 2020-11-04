@@ -1,6 +1,6 @@
 # Gilded Rose
 
-- Task is to refactor existing code so that it is neat and making additions to it are simle.
+- Task is to refactor existing code so that it is neat and making additions to it are simple.
 
 ## Description of the logic:
 
