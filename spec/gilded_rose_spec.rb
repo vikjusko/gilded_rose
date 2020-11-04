@@ -49,7 +49,23 @@ describe GildedRose do
 			expect(items[0].sell_in).to eq(-11)
 			expect(items[0].quality).to eq 9
 		end
-  end
+	end
+	
+	context 'Updating conjured items' do
+		it "Updates the quality by 2 when sell by date is has not passed" do 
+			items = [Item.new(name = "Conjured Mana Cake", sell_in = 3, quality = 6)]
+			GildedRose.new(items).update_quality
+			expect(items[0].sell_in).to eq(2)
+			expect(items[0].quality).to eq(4)
+		end
+
+		it "updates the quality by 4 when sell by date has passed" do 
+			items = [Item.new(name = "Conjured Mana Cake", sell_in = -1, quality = 6)]
+			GildedRose.new(items).update_quality
+			expect(items[0].sell_in).to eq(-2)
+			expect(items[0].quality).to eq(2)
+		end
+	end
 
   context 'Backstage passes quality update cases' do
     it 'increases the backstage pass only by 3 because it is less than 5 days away from the concert' do
@@ -195,7 +211,7 @@ describe GildedRose do
     end
 	
 
-  it "decreases the quality of Conjured items by 2 when sell by date is positive" do
+  it "decreases the quality of Conjured items by 2 " do
     	items = [Item.new(name = "Conjured Mana Cake", sell_in = 3, quality = 6)]
     	GildedRose.new(items).decrease_quality
 			expect(items[0].quality).to eq 4
