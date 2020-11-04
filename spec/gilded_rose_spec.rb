@@ -140,7 +140,14 @@ describe GildedRose do
 			GildedRose.new(items).increase_quality
 			expect(items[0].quality).to eq 50
 		end 
-  end
+
+		it "does increase the quality of Backstage passes" do
+			items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 12, quality = 40)]
+			GildedRose.new(items).increase_quality
+			expect(items[0].quality).to eq 41
+		end 
+	end
+
 
   describe '#decrease quality method' do
     it 'decreases the quality by one' do
@@ -183,5 +190,15 @@ describe Item do
 
   it 'Can return item information as a sentence' do
     expect(item.to_s).to eq '+5 Dexterity Vest, 10, 20'
-  end
+	end
+	
+	it "can detect if the item is ordinary" do
+	 brie = Item.new(name = 'Aged Brie', sell_in = 2, quality = 0)
+	 expect(brie.ordinary?).to eq false
+	end 
+
+	it "can detect if item is brie" do
+		brie = Item.new(name = "Aged Brie", sell_in = 2, quality = 0)
+		expect(brie.brie?).to eq true
+	end 
 end

@@ -39,7 +39,7 @@ class GildedRose
 
   def increase_quality
     @items.each do |item|
-      if item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert'
+      if item.name == 'Aged Brie' || (item.name == 'Backstage passes to a TAFKAL80ETC concert' && item.sell_in.positive?)
         item.quality += 1 if item.quality < 50
       end
     end
@@ -69,5 +69,14 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-  end
+	end
+	
+	def ordinary?
+		@name != 'Sulfuras, Hand of Ragnaros' && @name != 'Backstage passes to a TAFKAL80ETC concert' && @name != "Aged Brie"
+	end
+
+	def brie?
+		@name == 'Aged Brie'
+	end 
+	
 end
