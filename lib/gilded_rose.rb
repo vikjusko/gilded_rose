@@ -39,7 +39,8 @@ class GildedRose
   end
 
   def decrease_quality
-    @items.each do |item|
+		@items.each do |item|
+			item.quality -= 1 if item.name == "Conjured Mana Cake" && item.quality.positive?
       item.quality -= 1 if item.name != 'Sulfuras, Hand of Ragnaros' && item.quality.positive?
     end
   end

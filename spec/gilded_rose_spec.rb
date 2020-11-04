@@ -9,7 +9,9 @@ describe GildedRose do
       GildedRose.new(items).update_quality
       expect(items[0].name).to eq 'foo'
     end
-  end
+	end
+	
+
 
   context 'Old brie quality update case' do
     it 'increases  the quality of Brie the older it gets' do
@@ -35,11 +37,18 @@ describe GildedRose do
     end
 
     it 'qeeps increasing quality even when the product is pass the sell by date' do
-      items = [Item.new(name = 'Aged Brie', sell_in = -1, quality = 49)]
+      items = [Item.new(name = 'Aged Brie', sell_in = -1, quality = 48)]
       GildedRose.new(items).update_quality
       expect(items[0].sell_in).to eq(-2)
       expect(items[0].quality).to eq 50
-    end
+		end
+		
+		it "Updates the Quality of Brie by 2 after its pass its sell by date" do
+			items = [Item.new(name = "Aged Brie", sell_in = -10, quality = 7)]
+			GildedRose.new(items).update_quality
+			expect(items[0].sell_in).to eq(-11)
+			expect(items[0].quality).to eq 9
+		end
   end
 
   context 'Backstage passes quality update cases' do
@@ -49,15 +58,14 @@ describe GildedRose do
       GildedRose.new(items).update_quality
       expect(items[0].sell_in).to eq 4
       expect(items[0].quality).to eq 43
-		end
-		
-		it "increases the backstage pass only by 2 because it is less than 10 days away from the concert" do
-			items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = 6, quality = 40)]
-			GildedRose.new(items).update_quality
-			expect(items[0].sell_in).to eq 5
-			expect(items[0].quality).to eq 42
-end
+    end
 
+    it 'increases the backstage pass only by 2 because it is less than 10 days away from the concert' do
+      items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 6, quality = 40)]
+      GildedRose.new(items).update_quality
+      expect(items[0].sell_in).to eq 5
+      expect(items[0].quality).to eq 42
+    end
 
     it 'increases the backstage pass only by 1 when sell by date is less than 6 because it goes over the quality of 50' do
       items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 5, quality = 49)]
@@ -85,8 +93,8 @@ end
       items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 0, quality = 49)]
       # it only goes up by one because the quality cannot be more than 50
       GildedRose.new(items).update_quality
-			expect(items[0].quality).to eq 0
-			expect(items[0].sell_in).to eq(-1)
+      expect(items[0].quality).to eq 0
+      expect(items[0].sell_in).to eq(-1)
     end
   end
 
@@ -143,12 +151,7 @@ end
       expect(items[0].sell_in).to eq 4
     end
 
-    it 'Updates the Quality of Brie by 2 after its pass its sell by date' do
-      items = [Item.new(name = 'Aged Brie', sell_in = -10, quality = 7)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(-11)
-      expect(items[0].quality).to eq 9
-    end
+
   end
 
   describe 'increase quality method' do
@@ -190,7 +193,14 @@ end
       GildedRose.new(items).decrease_quality
       expect(items[0].quality).to eq(80)
     end
-  end
+	
+
+  it "decreases the quality of Conjured items by 2 when sell by date is positive" do
+    	items = [Item.new(name = "Conjured Mana Cake", sell_in = 3, quality = 6)]
+    	GildedRose.new(items).decrease_quality
+			expect(items[0].quality).to eq 4
+		end
+	end
 
   describe '#erase quality' do
     it 'erases the quality for the backstage passes that are past their due date' do
