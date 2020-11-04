@@ -23,12 +23,12 @@ class GildedRose
         end
 
       end
-      update_age if item.name != 'Sulfuras, Hand of Ragnaros'
+      update_age
       if item.sell_in.negative?
         if item.name != 'Aged Brie'
           if item.name != 'Backstage passes to a TAFKAL80ETC concert'
             if item.quality.positive?
-              decrease_quality if item.name != 'Sulfuras, Hand of Ragnaros'
+              decrease_quality
             end
           else
             erase_quality

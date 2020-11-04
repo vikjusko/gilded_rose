@@ -135,7 +135,13 @@ describe GildedRose do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).decrease_quality
       expect(items[0].quality).to eq 6
-    end
+		end
+		
+		it "does not decrease the quality of Sulfuras product" do
+			items = [Item.new(name = "Sulfuras, Hand of Ragnaros", sell_in = -1, quality = 80)]
+			GildedRose.new(items).decrease_quality
+			expect(items[0].quality).to eq(80)
+		end
   end
 
   describe '#erase quality' do
