@@ -164,11 +164,18 @@ describe GildedRose do
 	
   end
 
-  describe '#erase quality' do
+	describe '#erase quality' do
+		
+		it "erases the quality for the backstage passes that are past their due date" do 
+			items = [Item.new(name = "Backstage passes to a TAFKAL80ETC concert", sell_in = -1, quality = 40)]
+			GildedRose.new(items).erase_quality
+			expect(items[0].quality).to eq 0
+		end 
+
     it 'does not delete the quality of Elixir as its not a backstage pass ' do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).erase_quality
-      expect(items[0].quality).to eq 0
+      expect(items[0].quality).to eq 7
     end
 	end
 	
