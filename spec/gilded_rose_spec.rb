@@ -127,13 +127,19 @@ describe GildedRose do
       items = [Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7)]
       GildedRose.new(items).increase_quality
       expect(items[0].quality).to eq 7
-    end
+		end
+		
+		it "does increase the quality of Brie" do 
+			items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
+			GildedRose.new(items).increase_quality
+			expect(items[0].quality).to eq 50
+		end 
 
-    it 'does increase the quality of Brie' do
-      items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
-      GildedRose.new(items).increase_quality
-      expect(items[0].quality).to eq 50
-    end
+		it "Does not increase the quality of brie if the quality is over 50" do
+			items = [Item.new(name = "Aged Brie", sell_in = 0, quality = 50)]
+			GildedRose.new(items).increase_quality
+			expect(items[0].quality).to eq 50
+		end 
   end
 
   describe '#decrease quality method' do
@@ -147,7 +153,8 @@ describe GildedRose do
       items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
       GildedRose.new(items).decrease_quality
       expect(items[0].quality).to eq(80)
-    end
+		end
+	
   end
 
   # describe '#erase quality' do
