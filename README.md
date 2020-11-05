@@ -1,6 +1,5 @@
 ## Gilded Rose Kata - Ruby
 
-# Gilded Rose
 
 - Task is to refactor existing code so that it is neat and making additions to it are simple.
 
@@ -47,5 +46,7 @@ All items have a Quality value which denotes how valuable the item is.
 
 ##  Diagram of Logic:
 
-![Alt text](Gilded_Rose.png)
+- the age always decreases, unless its a Sulfras product
+
+![Alt text](diagram.png)
 

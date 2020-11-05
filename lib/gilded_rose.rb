@@ -6,22 +6,21 @@ class GildedRose
   end
 
   def update_quality
-    @items.each do |item|
-      case item.name
+		@items.each do |item|
+			update_age
+			case item.name
       when 'Aged Brie'
-        increase_quality
-        update_age
-        increase_quality if item.sell_in.negative?
+				increase_quality
+				increase_quality if item.sell_in.negative?
       when 'Backstage passes to a TAFKAL80ETC concert'
-        increase_quality
+				increase_quality
         increase_quality if item.sell_in < 11
-        increase_quality if item.sell_in < 6
-        update_age
-        erase_quality if item.sell_in.negative?
+				increase_quality if item.sell_in < 6 
+				erase_quality if item.sell_in.negative?	
+				
       else
-        decrease_quality
-        update_age
-        decrease_quality if item.sell_in.negative?
+				decrease_quality
+				decrease_quality if item.sell_in.negative?
       end
     end
   end
@@ -34,13 +33,13 @@ class GildedRose
 
   def increase_quality
     @items.each do |item|
-      item.quality += 1 if item.quality < 50
+			item.quality += 1 if item.quality < 50
     end
   end
 
   def decrease_quality
-    @items.each do |item|
-      item.quality -= 1 if item.name == 'Conjured Mana Cake' && item.quality.positive?
+		@items.each do |item|
+			item.quality -= 1 if item.name == "Conjured Mana Cake" && item.quality.positive?
       item.quality -= 1 if item.name != 'Sulfuras, Hand of Ragnaros' && item.quality.positive?
     end
   end
@@ -63,5 +62,5 @@ class Item
 
   def to_s
     "#{@name}, #{@sell_in}, #{@quality}"
-  end
+	end
 end

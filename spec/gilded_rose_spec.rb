@@ -85,7 +85,7 @@ describe GildedRose do
       items = [Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 6, quality = 40)]
       GildedRose.new(items).update_quality
       expect(items[0].sell_in).to eq 5
-      expect(items[0].quality).to eq 42
+      expect(items[0].quality).to eq 43
     end
 
     it 'increases the backstage pass only by 1 when sell by date is less than 6 because it goes over the quality of 50' do
