@@ -3,12 +3,12 @@
 class GildedRose
   def initialize(items)
     @items = items
-	end
-	
-	def update_item
-		update_age
-		update_quality
-	end 
+  end
+
+  def update_item
+    update_age
+    update_quality
+  end
 
   def update_quality
     @items.each do |item|
@@ -21,7 +21,6 @@ class GildedRose
         increase_quality if item.sell_in < 11
         increase_quality if item.sell_in < 6
         erase_quality if item.sell_in.negative?
-
       else
         decrease_quality
         decrease_quality if item.sell_in.negative?
@@ -50,7 +49,7 @@ class GildedRose
 
   def erase_quality
     @items.each do |item|
-      item.quality -= item.quality 
+      item.quality -= item.quality
     end
   end
 end
