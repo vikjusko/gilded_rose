@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-05T13:35:21+00:00">2020-11-05T13:35:21+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-05T13:37:45+00:00">2020-11-05T13:37:45+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  98.95%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.95
+         2.91
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>187</b> relevant lines,
-    <span class="green"><b>187</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>190</b> relevant lines,
+    <span class="green"><b>188</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  98.95%
 </span>
 )
   </div>
@@ -72,12 +72,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#10238f5f2b8cf04b7eb1629c646899ddd849530e" class="src_link" title="lib/gilded_rose.rb">lib/gilded_rose.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">66</td>
-            <td class="cell--number">36</td>
-            <td class="cell--number">36</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">11.08</td>
+            <td class="green strong cell--number t-file__coverage">94.87 %</td>
+            <td class="cell--number">71</td>
+            <td class="cell--number">39</td>
+            <td class="cell--number">37</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">10.26</td>
             
           </tr>
         
@@ -114,7 +114,7 @@
     <h3>lib/gilded_rose.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  94.87%
 </span>
 
       lines covered
@@ -123,9 +123,9 @@
     
 
     <div class="t-line-summary">
-      <b>36</b> relevant lines.
-      <span class="green"><b>36</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>39</b> relevant lines.
+      <span class="green"><b>37</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -219,40 +219,40 @@
 
             
 
-            <code class="ruby">  def update_quality</code>
+            <code class="ruby">	def update_item</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="9">
-            <span class="hits">20</span>
+          <li class="missed" data-hits="0" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">		@items.each do |item|</code>
+            <code class="ruby">		update_age</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="10">
-            <span class="hits">20</span>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
             
 
             
 
-            <code class="ruby">			update_age</code>
+            <code class="ruby">		update_quality</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="11">
-            <span class="hits">20</span>
+          <li class="never" data-hits="" data-linenumber="11">
+            
             
 
             
 
-            <code class="ruby">			case item.name</code>
+            <code class="ruby">	end </code>
           </li>
         </div>
       
@@ -263,12 +263,67 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def update_quality</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="14">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">		@items.each do |item|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="15">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">			update_age</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="16">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">			case item.name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
             <code class="ruby">      when &#39;Aged Brie&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="13">
+          <li class="covered" data-hits="5" data-linenumber="18">
             <span class="hits">5</span>
             
 
@@ -279,7 +334,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="14">
+          <li class="covered" data-hits="5" data-linenumber="19">
             <span class="hits">5</span>
             
 
@@ -290,7 +345,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -301,7 +356,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="16">
+          <li class="covered" data-hits="6" data-linenumber="21">
             <span class="hits">6</span>
             
 
@@ -312,7 +367,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="17">
+          <li class="covered" data-hits="6" data-linenumber="22">
             <span class="hits">6</span>
             
 
@@ -323,7 +378,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="18">
+          <li class="covered" data-hits="6" data-linenumber="23">
             <span class="hits">6</span>
             
 
@@ -334,7 +389,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="19">
+          <li class="covered" data-hits="6" data-linenumber="24">
             <span class="hits">6</span>
             
 
@@ -345,7 +400,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -356,7 +411,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -367,7 +422,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="22">
+          <li class="covered" data-hits="9" data-linenumber="27">
             <span class="hits">9</span>
             
 
@@ -378,7 +433,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="23">
+          <li class="covered" data-hits="9" data-linenumber="28">
             <span class="hits">9</span>
             
 
@@ -389,7 +444,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -400,68 +455,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
             
 
             <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def update_age</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="22" data-linenumber="29">
-            <span class="hits">22</span>
-            
-
-            
-
-            <code class="ruby">    @items.each do |item|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="22" data-linenumber="30">
-            <span class="hits">22</span>
-            
-
-            
-
-            <code class="ruby">      item.sell_in -= 1 if item.name != &#39;Sulfuras, Hand of Ragnaros&#39;</code>
           </li>
         </div>
       
@@ -472,7 +472,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -483,35 +483,24 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="33">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="34">
+          <li class="covered" data-hits="1" data-linenumber="33">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def increase_quality</code>
+            <code class="ruby">  def update_age</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="35">
-            <span class="hits">27</span>
+          <li class="covered" data-hits="22" data-linenumber="34">
+            <span class="hits">22</span>
             
 
             
@@ -521,13 +510,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="36">
-            <span class="hits">27</span>
+          <li class="covered" data-hits="22" data-linenumber="35">
+            <span class="hits">22</span>
             
 
             
 
-            <code class="ruby">			item.quality += 1 if item.quality &lt; 50</code>
+            <code class="ruby">      item.sell_in -= 1 if item.name != &#39;Sulfuras, Hand of Ragnaros&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -538,7 +538,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -549,62 +549,62 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
+          <li class="covered" data-hits="1" data-linenumber="39">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def decrease_quality</code>
+            <code class="ruby">  def increase_quality</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="41">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="27" data-linenumber="40">
+            <span class="hits">27</span>
             
 
             
 
-            <code class="ruby">		@items.each do |item|</code>
+            <code class="ruby">    @items.each do |item|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="42">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="27" data-linenumber="41">
+            <span class="hits">27</span>
             
 
             
 
-            <code class="ruby">			item.quality -= 1 if item.name == &quot;Conjured Mana Cake&quot; &amp;&amp; item.quality.positive?</code>
+            <code class="ruby">			item.quality += 1 if item.quality &lt; 50</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="43">
-            <span class="hits">18</span>
+          <li class="never" data-hits="" data-linenumber="42">
+            
             
 
             
 
-            <code class="ruby">      item.quality -= 1 if item.name != &#39;Sulfuras, Hand of Ragnaros&#39; &amp;&amp; item.quality.positive?</code>
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -615,62 +615,62 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="46">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="45">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def erase_quality</code>
+            <code class="ruby">  def decrease_quality</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="48">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="18" data-linenumber="46">
+            <span class="hits">18</span>
             
 
             
 
-            <code class="ruby">    @items.each do |item|</code>
+            <code class="ruby">		@items.each do |item|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="49">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="18" data-linenumber="47">
+            <span class="hits">18</span>
             
 
             
 
-            <code class="ruby">      item.quality -= item.quality</code>
+            <code class="ruby">			item.quality -= 1 if item.name == &quot;Conjured Mana Cake&quot; &amp;&amp; item.quality.positive?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="18" data-linenumber="48">
+            <span class="hits">18</span>
+            
+
+            
+
+            <code class="ruby">      item.quality -= 1 if item.name != &#39;Sulfuras, Hand of Ragnaros&#39; &amp;&amp; item.quality.positive?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -681,7 +681,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -692,51 +692,51 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="52">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="52">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">class Item</code>
+            <code class="ruby">  def erase_quality</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="53">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  attr_accessor :name, :sell_in, :quality</code>
+            <code class="ruby">    @items.each do |item|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="54">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      item.quality -= item.quality</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -747,51 +747,51 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
+          <li class="covered" data-hits="1" data-linenumber="59">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def initialize(name, sell_in, quality)</code>
+            <code class="ruby">class Item</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="58">
-            <span class="hits">30</span>
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @name = name</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="59">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    @sell_in = sell_in</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="60">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    @quality = quality</code>
+            <code class="ruby">  attr_accessor :name, :sell_in, :quality</code>
           </li>
         </div>
       
@@ -802,12 +802,67 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def initialize(name, sell_in, quality)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="30" data-linenumber="63">
+            <span class="hits">30</span>
+            
+
+            
+
+            <code class="ruby">    @name = name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="30" data-linenumber="64">
+            <span class="hits">30</span>
+            
+
+            
+
+            <code class="ruby">    @sell_in = sell_in</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="30" data-linenumber="65">
+            <span class="hits">30</span>
+            
+
+            
+
+            <code class="ruby">    @quality = quality</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="67">
             
             
 
@@ -818,7 +873,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
+          <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
@@ -829,7 +884,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
+          <li class="covered" data-hits="1" data-linenumber="69">
             <span class="hits">1</span>
             
 
@@ -840,7 +895,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -851,7 +906,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -1141,7 +1196,7 @@
 
             
 
-            <code class="ruby">    it &#39;qeeps quality of Brie the same when its quanitity is 50&#39; do</code>
+            <code class="ruby">     it &#39;qeeps quality of Brie the same when its quanitity is 50&#39; do</code>
           </li>
         </div>
       
@@ -1152,7 +1207,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = 2, quality = 50)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = 2, quality = 50)]</code>
           </li>
         </div>
       
@@ -1163,7 +1218,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">       GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1174,7 +1229,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq 1</code>
+            <code class="ruby">       expect(items[0].sell_in).to eq 1</code>
           </li>
         </div>
       
@@ -1185,7 +1240,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq 50</code>
+            <code class="ruby">       expect(items[0].quality).to eq 50</code>
           </li>
         </div>
       
@@ -1196,7 +1251,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       
@@ -1218,7 +1273,7 @@
 
             
 
-            <code class="ruby">    it &#39;qeeps increasing quality even when the product is almost past its the sell by date&#39; do</code>
+            <code class="ruby">     it &#39;qeeps increasing quality even when the product is almost past its the sell by date&#39; do</code>
           </li>
         </div>
       
@@ -1229,7 +1284,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = 0, quality = 49)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = 0, quality = 49)]</code>
           </li>
         </div>
       
@@ -1240,7 +1295,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">       GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1251,7 +1306,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq(-1)</code>
+            <code class="ruby">       expect(items[0].sell_in).to eq(-1)</code>
           </li>
         </div>
       
@@ -1262,7 +1317,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq 50</code>
+            <code class="ruby">       expect(items[0].quality).to eq 50</code>
           </li>
         </div>
       
@@ -1273,7 +1328,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       
@@ -1295,7 +1350,7 @@
 
             
 
-            <code class="ruby">    it &#39;qeeps increasing quality even when the product is pass the sell by date&#39; do</code>
+            <code class="ruby">     it &#39;qeeps increasing quality even when the product is pass the sell by date&#39; do</code>
           </li>
         </div>
       
@@ -1306,7 +1361,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = -1, quality = 48)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = -1, quality = 48)]</code>
           </li>
         </div>
       
@@ -1317,7 +1372,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">       GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1328,7 +1383,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq(-2)</code>
+            <code class="ruby">       expect(items[0].sell_in).to eq(-2)</code>
           </li>
         </div>
       
@@ -1339,7 +1394,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq 50</code>
+            <code class="ruby">       expect(items[0].quality).to eq 50</code>
           </li>
         </div>
       
@@ -1350,7 +1405,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       
@@ -1372,7 +1427,7 @@
 
             
 
-            <code class="ruby">    it &#39;Updates the Quality of Brie by 2 after its pass its sell by date&#39; do</code>
+            <code class="ruby">     it &#39;Updates the Quality of Brie by 2 after its pass its sell by date&#39; do</code>
           </li>
         </div>
       
@@ -1383,7 +1438,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = -10, quality = 7)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Aged Brie&#39;, sell_in = -10, quality = 7)]</code>
           </li>
         </div>
       
@@ -1394,7 +1449,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">       GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1405,7 +1460,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq(-11)</code>
+            <code class="ruby">       expect(items[0].sell_in).to eq(-11)</code>
           </li>
         </div>
       
@@ -1416,7 +1471,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq 9</code>
+            <code class="ruby">       expect(items[0].quality).to eq 9</code>
           </li>
         </div>
       
@@ -1427,7 +1482,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       
@@ -1482,7 +1537,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Conjured Mana Cake&#39;, sell_in = 3, quality = 6)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Conjured Mana Cake&#39;, sell_in = 3, quality = 6)]</code>
           </li>
         </div>
       
@@ -1493,7 +1548,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">       GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1504,7 +1559,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq(2)</code>
+            <code class="ruby">       expect(items[0].sell_in).to eq(2)</code>
           </li>
         </div>
       
@@ -1515,7 +1570,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq(4)</code>
+            <code class="ruby">       expect(items[0].quality).to eq(4)</code>
           </li>
         </div>
       
@@ -1647,7 +1702,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).update_quality</code>
+            <code class="ruby">  GildedRose.new(items).update_quality</code>
           </li>
         </div>
       
@@ -1658,7 +1713,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].sell_in).to eq(-2)</code>
+            <code class="ruby">  expect(items[0].sell_in).to eq(-2)</code>
           </li>
         </div>
       
@@ -1669,7 +1724,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq(0)</code>
+            <code class="ruby">  expect(items[0].quality).to eq(0)</code>
           </li>
         </div>
       
@@ -3198,7 +3253,7 @@
 
             
 
-            <code class="ruby">    it &#39;does not decrease the quality of Sulfuras product&#39; do</code>
+            <code class="ruby">     it &#39;does not decrease the quality of Sulfuras product&#39; do</code>
           </li>
         </div>
       
@@ -3209,7 +3264,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Sulfuras, Hand of Ragnaros&#39;, sell_in = -1, quality = 80)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Sulfuras, Hand of Ragnaros&#39;, sell_in = -1, quality = 80)]</code>
           </li>
         </div>
       
@@ -3220,7 +3275,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).decrease_quality</code>
+            <code class="ruby">       GildedRose.new(items).decrease_quality</code>
           </li>
         </div>
       
@@ -3231,7 +3286,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq(80)</code>
+            <code class="ruby">       expect(items[0].quality).to eq(80)</code>
           </li>
         </div>
       
@@ -3242,7 +3297,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       
@@ -3264,7 +3319,7 @@
 
             
 
-            <code class="ruby">    it &#39;decreases the quality of Conjured items by 2 &#39; do</code>
+            <code class="ruby">     it &#39;decreases the quality of Conjured items by 2 &#39; do</code>
           </li>
         </div>
       
@@ -3275,7 +3330,7 @@
 
             
 
-            <code class="ruby">      items = [Item.new(name = &#39;Conjured Mana Cake&#39;, sell_in = 3, quality = 6)]</code>
+            <code class="ruby">       items = [Item.new(name = &#39;Conjured Mana Cake&#39;, sell_in = 3, quality = 6)]</code>
           </li>
         </div>
       
@@ -3286,7 +3341,7 @@
 
             
 
-            <code class="ruby">      GildedRose.new(items).decrease_quality</code>
+            <code class="ruby">         GildedRose.new(items).decrease_quality</code>
           </li>
         </div>
       
@@ -3297,7 +3352,7 @@
 
             
 
-            <code class="ruby">      expect(items[0].quality).to eq 4</code>
+            <code class="ruby">         expect(items[0].quality).to eq 4</code>
           </li>
         </div>
       
@@ -3308,7 +3363,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">     end</code>
           </li>
         </div>
       

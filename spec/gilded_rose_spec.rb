@@ -20,41 +20,41 @@ describe GildedRose do
       expect(items[0].quality).to eq 1
     end
 
-    it 'qeeps quality of Brie the same when its quanitity is 50' do
-      items = [Item.new(name = 'Aged Brie', sell_in = 2, quality = 50)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq 1
-      expect(items[0].quality).to eq 50
-    end
+     it 'qeeps quality of Brie the same when its quanitity is 50' do
+       items = [Item.new(name = 'Aged Brie', sell_in = 2, quality = 50)]
+       GildedRose.new(items).update_quality
+       expect(items[0].sell_in).to eq 1
+       expect(items[0].quality).to eq 50
+     end
 
-    it 'qeeps increasing quality even when the product is almost past its the sell by date' do
-      items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(-1)
-      expect(items[0].quality).to eq 50
-    end
+     it 'qeeps increasing quality even when the product is almost past its the sell by date' do
+       items = [Item.new(name = 'Aged Brie', sell_in = 0, quality = 49)]
+       GildedRose.new(items).update_quality
+       expect(items[0].sell_in).to eq(-1)
+       expect(items[0].quality).to eq 50
+     end
 
-    it 'qeeps increasing quality even when the product is pass the sell by date' do
-      items = [Item.new(name = 'Aged Brie', sell_in = -1, quality = 48)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(-2)
-      expect(items[0].quality).to eq 50
-    end
+     it 'qeeps increasing quality even when the product is pass the sell by date' do
+       items = [Item.new(name = 'Aged Brie', sell_in = -1, quality = 48)]
+       GildedRose.new(items).update_quality
+       expect(items[0].sell_in).to eq(-2)
+       expect(items[0].quality).to eq 50
+     end
 
-    it 'Updates the Quality of Brie by 2 after its pass its sell by date' do
-      items = [Item.new(name = 'Aged Brie', sell_in = -10, quality = 7)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(-11)
-      expect(items[0].quality).to eq 9
-    end
+     it 'Updates the Quality of Brie by 2 after its pass its sell by date' do
+       items = [Item.new(name = 'Aged Brie', sell_in = -10, quality = 7)]
+       GildedRose.new(items).update_quality
+       expect(items[0].sell_in).to eq(-11)
+       expect(items[0].quality).to eq 9
+     end
   end
 
   context 'Updating conjured items' do
     it 'Updates the quality by 2 when sell by date is has not passed' do
-      items = [Item.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(2)
-      expect(items[0].quality).to eq(4)
+       items = [Item.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6)]
+       GildedRose.new(items).update_quality
+       expect(items[0].sell_in).to eq(2)
+       expect(items[0].quality).to eq(4)
     end
 
     it 'updates the quality by 4 when sell by date has passed' do
@@ -66,9 +66,9 @@ describe GildedRose do
 
     it 'does not update the quality when quality is zero' do
       items = [Item.new(name = 'Conjured Mana Cake', sell_in = -1, quality = 0)]
-      GildedRose.new(items).update_quality
-      expect(items[0].sell_in).to eq(-2)
-      expect(items[0].quality).to eq(0)
+  GildedRose.new(items).update_quality
+  expect(items[0].sell_in).to eq(-2)
+  expect(items[0].quality).to eq(0)
     end
   end
 
@@ -207,17 +207,17 @@ describe GildedRose do
       expect(items[0].quality).to eq 6
     end
 
-    it 'does not decrease the quality of Sulfuras product' do
-      items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
-      GildedRose.new(items).decrease_quality
-      expect(items[0].quality).to eq(80)
-    end
+     it 'does not decrease the quality of Sulfuras product' do
+       items = [Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80)]
+       GildedRose.new(items).decrease_quality
+       expect(items[0].quality).to eq(80)
+     end
 
-    it 'decreases the quality of Conjured items by 2 ' do
-      items = [Item.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6)]
-      GildedRose.new(items).decrease_quality
-      expect(items[0].quality).to eq 4
-    end
+     it 'decreases the quality of Conjured items by 2 ' do
+       items = [Item.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6)]
+         GildedRose.new(items).decrease_quality
+         expect(items[0].quality).to eq 4
+     end
   end
 
   describe '#erase quality' do
